@@ -46,3 +46,35 @@ export const saveLaptopRest = (laptop, fnShowMessage) => {
         }
     )
 }
+
+export const updateLaptopRest = (laptop, fnShowMessage) => {
+    console.log(".¿")
+    const config = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            id: laptop.id,
+            marca: laptop.marca,
+            procesador: laptop.procesador,
+            memoria: laptop.memoria,
+            disco: laptop.disco
+        })
+    }
+    fetch(
+        URL + "laptops/" + laptop.id,
+        config
+    ).then(
+        (response) => {
+            return response.json()
+        }
+    ).then(
+        (body) => {
+            console.log("entra al then")
+            fnShowMessage()
+            console.log(body)
+        }
+    )
+}
+

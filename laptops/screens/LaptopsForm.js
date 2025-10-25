@@ -3,20 +3,40 @@ import { Input, Button } from "@rneui/base"
 import { useState } from "react"
 import { saveLaptopRest } from "../rest_client/laptops"
 
-export const LaptopsForm = ({ navigation }) => {
-    const [marca, setMarca] = useState();
-    const [procesador, setProcesador] = useState();
-    const [memoria, setMemoria] = useState();
-    const [disco, setDisco] = useState();
+export const LaptopsForm = ({ navigation, route }) => {
+    let laptopRetrieved = route.params.LaptopParam;
+    let isNew = true
 
-    const showMessage = () => {
-        Alert.alert("Confimarcion", "SE CREÓ LA LAPTOP")
+    if (laptopRetrieved != null) {
+        isNew = false
     }
 
-    const saveLaptop = () => {
-        console.log("entra a guardar")
+
+    const [marca, setMarca] = useState(!isNew ? laptopRetrieved.marca : null);
+    const [procesador, setProcesador] = useState(!isNew ? laptopRetrieved.procesador : null);
+    const [memoria, setMemoria] = useState(!isNew ? laptopRetrieved.memoria : null);
+    const [disco, setDisco] = useState(!isNew ? laptopRetrieved.disco : null);
+
+    const showMessage = () => {
+        Alert.alert("Confimarcion", isNew ? "SE CREÓ LA LAPTOP" : "Laptop Actualizada")
         navigation.goBack()
+    }
+
+    const createLaptop = () => {
+        console.log("entra a guardar")
         saveLaptopRest(({
+            marca: marca,
+            procesador: procesador,
+            memoria: memoria,
+            disco: disco
+        }), showMessage
+        )
+    }
+
+    const updateLaptop = () => {
+        console.log("entra a actualizar")
+        saveLaptopRest(({
+            id: laptopRetrieved.id,
             marca: marca,
             procesador: procesador,
             memoria: memoria,
@@ -57,7 +77,7 @@ export const LaptopsForm = ({ navigation }) => {
             />
             <Button
                 title="GUARDAR"
-                onPress={saveLaptop}
+                onPress={isNew ? createLaptop : updateLaptop}
             />
         </View>
     )

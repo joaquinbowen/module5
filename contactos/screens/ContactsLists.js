@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from "react-native"
+import { View, Text, StyleSheet, FlatList, TouchableHighlight } from "react-native"
 import { Button, FAB } from "@rneui/base";
 import { getAllContacts } from "../rest_client/contactos"
 import { useState } from "react";
@@ -9,12 +9,14 @@ export const ContactsList = (props) => {
 
     const ContactItem = ({ contact }) => {
         return (
-            <ListItem>
-                <ListItem.Content>
-                    <ListItem.Title>{contact.nombre} {contact.apellido} </ListItem.Title>
-                    <ListItem.Subtitle>{contact.celular} </ListItem.Subtitle>
-                </ListItem.Content>
-            </ListItem>
+            <TouchableHighlight onPress={() => { props.navigation.navigate("ContactsFormNav", { contactParam: contact }) }} >
+                <ListItem>
+                    <ListItem.Content>
+                        <ListItem.Title>{contact.nombre} {contact.apellido} </ListItem.Title>
+                        <ListItem.Subtitle>{contact.celular} </ListItem.Subtitle>
+                    </ListItem.Content>
+                </ListItem>
+            </TouchableHighlight>
         )
     }
 
@@ -42,7 +44,7 @@ export const ContactsList = (props) => {
             <FAB
                 title="+"
                 onPress={() => {
-                    props.navigation.navigate("ContactsFormNav")
+                    props.navigation.navigate("ContactsFormNav", {})
                 }}
             />
 
