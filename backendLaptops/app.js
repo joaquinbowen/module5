@@ -46,5 +46,5 @@ app.put("/laptops/:id", (request, response) => {
 
 app.delete("/laptops/:id", (request, response) => {
     const id = request.params.id;
-    response.send()
+    response.send({ id: id })
 })

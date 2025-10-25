@@ -3,7 +3,7 @@ const PORT = "3001";
 const URL = "http://" + IP + ":" + PORT + "/"
 
 export const getAllContacts = (fnRefreshList) => {
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    console.log("getAllContacts")
     console.log(URL + "contactos")
     fetch(
         URL + "contactos"
@@ -39,7 +39,7 @@ export const saveContactRest = (contact, fnShowMessage) => {
         }
     ).then(
         (body) => {
-            fnShowMessage();
+            fnShowMessage("Se ha creado el contacto");
             console.log(body);
         }
     )
@@ -67,7 +67,26 @@ export const updateContactRest = (contact, fnShowMessage) => {
         }
     ).then(
         (body) => {
-            fnShowMessage();
+            fnShowMessage("Se ha actualizado el contacto");
+            console.log(body);
+        }
+    )
+}
+
+export const deleteContactRest = (contact, fnShowMessage) => {
+    const config = {
+        method: "DELETE"
+    }
+    fetch(
+        URL + "contactos/" + contact.id,
+        config
+    ).then(
+        (response) => {
+            return response.json()
+        }
+    ).then(
+        (body) => {
+            fnShowMessage("Se ha eliminado el contacto");
             console.log(body);
         }
     )

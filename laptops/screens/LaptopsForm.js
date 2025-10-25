@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Alert } from "react-native"
 import { Input, Button } from "@rneui/base"
 import { useState } from "react"
-import { saveLaptopRest } from "../rest_client/laptops"
+import { saveLaptopRest, updateLaptopRest, deleteLaptopRest } from "../rest_client/laptops"
 
 export const LaptopsForm = ({ navigation, route }) => {
     let laptopRetrieved = route.params.LaptopParam;
@@ -17,8 +17,8 @@ export const LaptopsForm = ({ navigation, route }) => {
     const [memoria, setMemoria] = useState(!isNew ? laptopRetrieved.memoria : null);
     const [disco, setDisco] = useState(!isNew ? laptopRetrieved.disco : null);
 
-    const showMessage = () => {
-        Alert.alert("Confimarcion", isNew ? "SE CREÓ LA LAPTOP" : "Laptop Actualizada")
+    const showMessage = (message) => {
+        Alert.alert("Confimarcion", message)
         navigation.goBack()
     }
 
@@ -35,7 +35,7 @@ export const LaptopsForm = ({ navigation, route }) => {
 
     const updateLaptop = () => {
         console.log("entra a actualizar")
-        saveLaptopRest(({
+        updateLaptopRest(({
             id: laptopRetrieved.id,
             marca: marca,
             procesador: procesador,
@@ -43,6 +43,24 @@ export const LaptopsForm = ({ navigation, route }) => {
             disco: disco
         }), showMessage
         )
+    }
+
+    const deleteLaptop = () => {
+        deleteLaptopRest(
+            { id: laptopRetrieved.id }, showMessage
+        )
+    }
+
+    const confirmDelete = () => {
+        Alert.alert("CONFIRMACION", "ESTA SEGURO DE ELIMINAR", [
+            {
+                text: "CANCELAR"
+            },
+            {
+                text: "ACEPTAR",
+                onPress: deleteLaptop
+            }
+        ])
     }
 
     return (
@@ -79,6 +97,9 @@ export const LaptopsForm = ({ navigation, route }) => {
                 title="GUARDAR"
                 onPress={isNew ? createLaptop : updateLaptop}
             />
+            {
+                isNew ? <View></View> : <Button title="ELIMINAR" onPress={confirmDelete} />
+            }
         </View>
     )
 

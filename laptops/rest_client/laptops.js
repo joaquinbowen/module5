@@ -41,7 +41,7 @@ export const saveLaptopRest = (laptop, fnShowMessage) => {
     ).then(
         (body) => {
             console.log("entra al then")
-            fnShowMessage()
+            fnShowMessage("SE HA CREADO LA LAPTOP")
             console.log(body)
         }
     )
@@ -72,9 +72,29 @@ export const updateLaptopRest = (laptop, fnShowMessage) => {
     ).then(
         (body) => {
             console.log("entra al then")
-            fnShowMessage()
+            fnShowMessage("SE HA ACTUALIZADO LA LAPTOP")
             console.log(body)
         }
     )
 }
 
+export const deleteLaptopRest = (laptop, fnShowMessage) => {
+    console.log(".¿")
+    const config = {
+        method: "DELETE"
+    }
+    fetch(
+        URL + "laptops/" + laptop.id,
+        config
+    ).then(
+        (response) => {
+            return response.json()
+        }
+    ).then(
+        (body) => {
+            console.log("entra al then")
+            fnShowMessage("SE HA ELIMINADO LA LAPTOP")
+            console.log(body)
+        }
+    )
+}
