@@ -13,6 +13,7 @@ export const getAllContacts = (fnRefreshList) => {
         }
     ).then(
         (body) => {
+            console.log("contactos recibidos")
             fnRefreshList(body);
         }
     )
@@ -39,8 +40,9 @@ export const saveContactRest = (contact, fnShowMessage) => {
         }
     ).then(
         (body) => {
+            console.log("respuesta del post : " + body);
             fnShowMessage("Se ha creado el contacto");
-            console.log(body);
+
         }
     )
 }

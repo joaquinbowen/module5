@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Alert } from "react-native"
 import { Input, Button } from "@rneui/base"
 import { useState } from "react"
-import { saveContactRest, updateContactRest, deleteContactRest } from "../rest_client/contactos"
+import { saveContactRest, updateContactRest, deleteContactRest, getAllContacts } from "../rest_client/contactos"
 
 export const ContactsForm = ({ navigation, route }) => {
     let contactRetrieved = route.params.contactParam;
@@ -20,12 +20,13 @@ export const ContactsForm = ({ navigation, route }) => {
     console.log(route.params.contactParam)
 
     const showMessage = (message) => {
+        console.log("aaaaaaaaaaaaaaaaaaaaa")
         Alert.alert("Confirmacion:", message)
-        navigation.goBack()
+        navigation.navigate("ContactsListNav");
     }
 
     const createContact = () => {
-        console.log("aaaa")
+        console.log("creando contacto")
         saveContactRest(
             {
                 name: name,

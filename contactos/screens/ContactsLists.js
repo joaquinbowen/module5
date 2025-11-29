@@ -7,11 +7,11 @@ import { ListItem } from '@rneui/themed';
 export const ContactsList = (props) => {
     const [contactsList, setContactsList] = useState([]);
 
-
     useEffect(() => {
         console.log("use effect")
         getAllContacts(fnRefreshList);
     }, [])
+
     const ContactItem = ({ contact }) => {
         return (
             <TouchableHighlight onPress={() => { props.navigation.navigate("ContactsFormNav", { contactParam: contact }) }} >
@@ -40,6 +40,7 @@ export const ContactsList = (props) => {
                     )
                 }}
             />
+
             <FAB
                 title="+"
                 onPress={() => {
