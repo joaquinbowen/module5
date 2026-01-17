@@ -48,3 +48,5 @@ app.delete("/laptops/:id", (request, response) => {
     const id = request.params.id;
     response.send({ id: id })
 })
+
+//hola
