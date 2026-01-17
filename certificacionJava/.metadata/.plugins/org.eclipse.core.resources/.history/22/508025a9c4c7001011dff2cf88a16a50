@@ -1,0 +1,24 @@
+package com.cmc.metodos;
+
+public class Equals {
+	public static void main(String[] args) {
+		// ==
+		// equals
+		
+		String a="abc";
+		String b="d";
+		String c=a+b;
+		System.out.println(c);
+		
+		String nuevo="abcd";
+		System.out.println(nuevo);
+		
+		if(c==nuevo) {
+			System.out.println("son iguales con ==");
+		}
+		
+		if(c.equals(nuevo))
+		
+		
+	}
+}

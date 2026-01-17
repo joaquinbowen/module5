@@ -1,0 +1,16 @@
+package com.cmc.localdatetime;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+public class Conversiones {
+	public static void main(String[] args) {
+		LocalDate ld = LocalDate.of(2000, 10, 24);
+		LocalDateTime ldt1=ld.atTime(15,45);
+		System.out.println(ld);
+		System.out.println(ldt1);
+		System.out.println(ld.atStartOfDay());
+		
+		LocalDate ldConv=ldt1.toLocalDate();
+	}
+}

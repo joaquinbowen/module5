@@ -1,0 +1,12 @@
+package com.cmc.flujo;
+
+public class Eeeeee {
+	public String v1="As34";
+	public String v2="as34";
+	public static void main(String[] args) {
+		Eeeeee a= new Eeeeee();
+		v1=a.v1;
+		v2=a.v2
+		Boolean bo=v1==v2;
+	}
+}

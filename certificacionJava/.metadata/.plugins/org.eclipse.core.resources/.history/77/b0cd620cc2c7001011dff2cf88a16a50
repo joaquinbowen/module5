@@ -1,0 +1,16 @@
+package com.cmc.metodos;
+
+public class Comunes {
+	public static void main(String[] args) {
+		StringBuilder sbuilder=new StringBuilder("repazando metodos comunes");
+		char res=sbuilder.charAt(10);
+		int posicion=sbuilder.indexOf("do");
+		System.out.println(posicion);
+		System.out.println(res);
+		
+		String cadena="repazando metodos comunes";
+		int posicion2=cadena.indexOf("co");
+		char res2=cadena.charAt(11);
+		System.out.println(res2);
+	}
+}

@@ -1,0 +1,10 @@
+package com.cmc.metodos;
+
+public class Reemplazar {
+	public static void main(String[] args) {
+		String cadena="certi java8";
+		System.out.println(cadena.replace("ert", "ABC"));
+		
+		StringBuilder sbuild=new StringBuilder("certi java 8 ert");
+	}
+}

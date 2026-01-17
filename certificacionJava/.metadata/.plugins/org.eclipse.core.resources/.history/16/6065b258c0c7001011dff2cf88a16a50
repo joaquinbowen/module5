@@ -1,0 +1,11 @@
+package com.cmc.metodos;
+
+public class MetodosBufferBuilder {
+	public static void main(String[] args) {
+		//delete
+		//insert
+		//reverse
+		
+		StringBuilder sbuild=new StringBuilder("certi java 8 ert");
+	}
+}

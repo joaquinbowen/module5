@@ -1,0 +1,12 @@
+package com.cmc.productos;
+
+import java.util.List;
+
+public class AdminProductos {
+	private List<Producto> listaProductos;
+	
+	public AdminProductos() {
+		listaProductos=new ArrayList<Producto>();
+	}
+	
+}

@@ -1,0 +1,22 @@
+package com.cmc.metodos;
+
+public class Concatenar {
+	char c;
+	boolean b;
+	public static void main(String[] args) {
+		String cadenaInicial="hola";
+		String res =cadenaInicial.concat("mundo");
+		System.out.println(cadenaInicial);
+		System.out.println(res);
+		
+		StringBuffer sb1=new StringBuffer("hola");
+		sb1.append(" mundo");
+		System.out.println(sb1);
+		
+		Boolean comp=Boolean.parseBoolean("TRUe");
+		System.out.println(comp);
+		
+		String rest=(b==true)?"a":c;
+		
+	}
+}

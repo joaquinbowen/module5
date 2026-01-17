@@ -1,0 +1,21 @@
+package com.cmc.lambda;
+
+public class TestAdminAnimal {
+	public static void main(String[] args) {
+		AdminAnimal admin =new AdminAnimal();
+		admin.alimentar(new Perro());
+		admin.alimentar(new Gato());
+		
+		admin.alimentar(()-> {
+			System.out.println("Leon comiendo");
+		});
+		
+		admin.alimentar(()->{
+			System.out.println("tigre comiendo");
+		});
+		
+		admin.eliminar((int cualquierCosa)->{
+			System.out.println("descartando"+cualquierCosa);
+		});
+	}
+}

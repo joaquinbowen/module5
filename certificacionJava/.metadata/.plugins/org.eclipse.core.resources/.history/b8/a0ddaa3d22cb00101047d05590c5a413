@@ -1,0 +1,10 @@
+package com.cmc.predicados;
+
+public class TestPredicate {
+	public static void main(String[] args) {
+		AdminProducto ad=new AdminProducto();
+		ad.ejecutar(a->
+			a.length()>10
+		);
+	}
+}

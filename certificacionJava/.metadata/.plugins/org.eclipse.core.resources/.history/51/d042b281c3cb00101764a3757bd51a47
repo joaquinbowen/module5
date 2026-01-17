@@ -1,0 +1,27 @@
+package com.cmc.switchcase;
+
+import java.util.ArrayList;
+
+public class Ejercicio1 {
+	public static void main(String[] args) {
+		int dia=1;
+		String nombreDia="";
+		
+		switch(dia) {
+			case 1: nombreDia="Lunes";
+					break;
+			case 2: nombreDia="Martes";
+					break;
+			case 3: nombreDia="Miercoles";
+					break;
+			case 4: nombreDia="Jueves";
+					break;
+			default: nombreDia="NO COINCIDE";
+			
+		}
+		
+		System.out.println(nombreDia);
+		
+		ArrayList list=new ArrayList();
+	}
+}

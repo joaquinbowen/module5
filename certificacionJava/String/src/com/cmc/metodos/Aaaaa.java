@@ -1,0 +1,8 @@
+package com.cmc.metodos;
+
+public class Aaaaa {
+	public static void main(String[] args) {
+		StringBuffer sb1=new StringBuffer(4);
+		System.out.println(sb1);
+	}
+}

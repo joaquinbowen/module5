@@ -1,0 +1,10 @@
+package com.cmc.localdate;
+
+import java.time.LocalDate;
+
+public class Parse {
+	public static void main(String[] args) {
+		String fecha="2022/12/01";
+		LocalDate ld=LocalDate.parse(fecha);
+	}
+}

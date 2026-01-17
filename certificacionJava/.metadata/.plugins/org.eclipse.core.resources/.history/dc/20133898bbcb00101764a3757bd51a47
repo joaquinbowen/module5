@@ -1,0 +1,5 @@
+package com.finalmodifier;
+
+public interface Modificable {
+	void modificar();
+}

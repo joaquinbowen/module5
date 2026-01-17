@@ -1,0 +1,19 @@
+package com.cmc.flujo;
+
+public class Ejercicio7 {
+	public static void main(String[] args) {
+		String a=null;
+		try {
+			System.out.println("aaaaaaaaaaa");
+			a.toLowerCase(); //null.xxxx NullPointerException
+			System.out.println("luego de lower caseeeeeee");
+		}catch(Exception ex) {
+			System.out.println("entra al catch");
+			ex.printStackTrace();
+		}finally {
+			System.out.println("siempre ejecuta el finally");
+		}
+		System.out.println("fiiiiiiiiiiiiiiiiiin");
+		
+	}
+}

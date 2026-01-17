@@ -1,0 +1,14 @@
+package com.cmc.genericos;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TestGenericos {
+	public static void main(String[] args) {
+		List<String> cadenas=new ArrayList<String>();
+		cadenas.add("uno");
+		cadenas.add("dos");
+		String resultado=cadenas.get(0);
+	}
+	
+}

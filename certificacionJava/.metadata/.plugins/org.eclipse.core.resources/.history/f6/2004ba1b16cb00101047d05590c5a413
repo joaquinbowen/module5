@@ -1,0 +1,7 @@
+package com.cmc.lambda;
+
+public class AdminAnimal {
+	public void alimentar(Animal animal) {
+		animal.comer();
+	}
+}

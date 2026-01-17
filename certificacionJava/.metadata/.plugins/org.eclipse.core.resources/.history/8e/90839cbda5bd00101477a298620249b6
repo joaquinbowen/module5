@@ -1,0 +1,10 @@
+package com.cmc.flujo;
+
+public class Ejercicio7 {
+	public static void main(String[] args) {
+		String a=null;
+		System.out.println("aaaaaaaaaaa");
+		a.toLowerCase(); //null.xxxx NullPointerException
+		System.out.println("fiiiiiiiiiiiiiiiiiin");
+	}
+}

@@ -1,0 +1,9 @@
+package com.cmc.predicados;
+
+import java.util.function.Predicate;
+
+public class AdminProducto {
+	public void ejecutar(Predicate<String> predicate) {
+		predicate.test("hola mundo");
+	}
+}

@@ -1,0 +1,11 @@
+package com.cmc.localdate;
+
+import java.time.LocalDate;
+
+public class Instanciar {
+	public static void main(String[] args) {
+		//LocalDate ld = new LocalDate(); error de compilacion
+		
+		LocalDate ld=LocalDate.now();
+	}
+}

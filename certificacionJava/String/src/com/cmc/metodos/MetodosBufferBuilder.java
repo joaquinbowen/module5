@@ -1,0 +1,20 @@
+package com.cmc.metodos;
+
+public class MetodosBufferBuilder {
+	public static void main(String[] args) {
+		//delete
+		//insert
+		//reverse
+		
+		StringBuilder sbuild=new StringBuilder("certi java 8 ert");
+		//sbuild.delete(5, 8);
+		System.out.println(sbuild);
+		
+		sbuild.insert(2, "COLADO");
+		System.out.println(sbuild);
+		
+		sbuild.reverse();
+		
+		System.out.println(sbuild);
+	}
+}

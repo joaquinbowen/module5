@@ -1,0 +1,19 @@
+package com.cmc.lambda;
+
+public class AdminAnimal {
+	public void alimentar(Animal animal) {
+		animal.comer();
+	}
+	
+	public void eliminar(Descartable descartable) {
+		descartable.descartar((int)(Math.random()*10));
+	}
+	
+	public void reemplazar(Sustituible sustituible) {
+		if(sustituible.esSustituible((int)(Math.random()*10))){
+			System.out.println("se ha reemplazado");
+		}else {
+			System.out.println("no ha reemplazado");
+		}
+	}
+}

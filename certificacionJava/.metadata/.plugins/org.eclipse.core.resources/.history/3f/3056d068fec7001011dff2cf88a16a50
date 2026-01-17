@@ -1,0 +1,17 @@
+package com.cmc.localdate;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Format {
+	public static void main(String[] args) {
+		LocalDate ld=LocalDate.now();
+		String cadena=ld.format(DateTimeFormatter.ISO_DATE);
+		System.out.println(cadena);
+		
+		
+		DateTimeFormatter f1=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String cadena22=ld.format(f1);
+		System.out.println(cadena22);
+	}
+}

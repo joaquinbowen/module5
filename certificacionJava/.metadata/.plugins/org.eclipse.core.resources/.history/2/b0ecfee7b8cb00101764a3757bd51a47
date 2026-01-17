@@ -1,0 +1,16 @@
+package com.cmc.switchcase;
+
+public class Ejercicio1 {
+	public static void main(String[] args) {
+		int dia=1;
+		String nombreDia="";
+		
+		switch(dia) {
+			case 1: nombreDia="Lunes";
+			case 2: nombreDia="Martes";
+			case 3: nombreDia="Miercoles";
+			case 4: nombreDia="Jueves";
+			default: nombreDia="NO COINCIDE";
+		}
+	}
+}

@@ -1,0 +1,8 @@
+package com.cmc.metodos;
+
+public class Substring {
+	public static void main(String[] args) {
+		String cadena="la buena vida";
+		cadena.substring(3);
+	}
+}

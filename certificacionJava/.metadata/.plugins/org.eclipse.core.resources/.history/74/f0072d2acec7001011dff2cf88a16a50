@@ -1,0 +1,12 @@
+package com.cmc.metodos;
+
+public class Substring {
+	public static void main(String[] args) {
+		String cadena="la buena vida";
+		String res=cadena.substring(3);
+		System.out.println(res);
+		
+		res=cadena.substring(3, 50);
+		System.out.println(res);
+	}
+}

@@ -1,0 +1,11 @@
+package com.cmc.localdate;
+
+import java.time.LocalDateTime;
+
+public class Metodos {
+	public static void main(String[] args) {
+		LocalDateTime ldt=LocalDateTime.now();
+		System.out.println(ldt.getYear());
+		System.out.println(ldt.getMonth());
+	}
+}

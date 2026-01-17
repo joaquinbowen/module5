@@ -1,0 +1,20 @@
+package com.cmc.localdate;
+
+import java.time.LocalDate;
+import java.time.Month;
+
+public class Instanciar {
+	public static void main(String[] args) {
+		//LocalDate ld = new LocalDate(); error de compilacion
+		
+		LocalDate ld=LocalDate.now();
+		System.out.println(ld);//yyyy-MM-dd
+		
+		LocalDate ld2=LocalDate.of(2025, 5, 12);
+		System.out.println(ld2);
+		
+		LocalDate ld3=LocalDate.of(2025, Month.NOVEMBER, 22);
+		System.out.println(ld3);
+		
+	}
+}

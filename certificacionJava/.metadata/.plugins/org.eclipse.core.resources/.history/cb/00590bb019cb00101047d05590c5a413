@@ -1,0 +1,10 @@
+package com.cmc.productos;
+
+import java.time.LocalDate;
+
+public class TestAdminProductos {
+	public static void main(String[] args) {
+		AdminProductos admin=new AdminProductos();
+		admin.agregarProducto(new Producto("papitas",0.50,10,LocalDate.of(2025, 3, 21)));
+	}
+}

@@ -1,0 +1,8 @@
+package com.cmc.metodos;
+
+public class Comunes {
+	public static void main(String[] args) {
+		StringBuilder sbuilder=new StringBuilder("repazando metodos comunes");
+		char res=sbuilder.charAt(10);
+	}
+}

@@ -1,0 +1,7 @@
+package com.cmc.predicados;
+
+public class Remover {
+	public static void main(String[] args) {
+		List<Producto> productos=new ArrayList<Producto>();
+	}
+}

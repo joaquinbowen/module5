@@ -1,0 +1,19 @@
+package com.cmc.productos;
+
+import java.time.LocalDate;
+
+public class Producto {
+	private String nombre;
+	private double precio;
+	private int stock;
+	private LocalDate fechaCaducidad;
+	private boolean estado;
+	public Producto(String nombre, double precio, int stock, LocalDate fechaCaducidad, boolean estado) {
+		super();
+		this.nombre = nombre;
+		this.precio = precio;
+		this.stock = stock;
+		this.fechaCaducidad = fechaCaducidad;
+		this.estado = estado;
+	}
+}

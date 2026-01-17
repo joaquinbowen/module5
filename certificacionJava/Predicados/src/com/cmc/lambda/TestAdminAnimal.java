@@ -1,0 +1,55 @@
+package com.cmc.lambda;
+
+public class TestAdminAnimal {
+	public static void main(String[] args) {
+		AdminAnimal admin =new AdminAnimal();
+		admin.alimentar(new Perro());
+		admin.alimentar(new Gato());
+		
+		admin.alimentar(()-> {
+			System.out.println("Leon comiendo");
+		});
+		
+		admin.alimentar(()->{
+			System.out.println("tigre comiendo");
+		});
+		
+		admin.eliminar((cualquierCosa)->{
+			System.out.println("descartando"+cualquierCosa);
+		});
+		
+		admin.eliminar((int cualquierCosa)->{
+			System.out.println("descartando"+cualquierCosa);
+		});
+		admin.eliminar(cualquierCosa->{
+			System.out.println("descartando"+cualquierCosa);
+		});
+		
+		
+		admin.reemplazar((int valor)->{
+			System.out.println("valor:"+valor);
+			return valor>5;
+		});
+		
+		admin.reemplazar((int valor)->{
+			System.out.println("valor2:"+valor);
+			return valor>2;
+		});
+		
+		admin.reemplazar((valor)->{
+			System.out.println("valor2:"+valor);
+			return valor>2;
+		});
+		
+		admin.reemplazar(valor->{
+			System.out.println("valor2:"+valor);
+			return valor>2;
+		});
+		
+		admin.reemplazar(valor->
+			valor>2
+		);
+		
+		
+	}
+}

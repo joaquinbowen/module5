@@ -1,0 +1,16 @@
+package com.cmc.predicados;
+
+import java.util.List;
+import java.util.function.Predicate;
+
+import com.cmc.productos.Producto;
+
+public class Inventario {
+	public static void modificar(List<Producto> productos, Predicate<Producto> condicion) {
+		for(Producto p:productos) {
+			if(condicion.test(p)) {
+				p.setEstado(true);
+			}
+		}
+	}
+}
